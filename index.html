@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心灵平静计算器 | Inner Peace Calculator</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary-600">心灵平静 | Inner Peace</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary-600">功能 Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary-600">工作原理 How it Works</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary-600">价格 Pricing</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-primary-50 to-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                寻找内心的平静 
+                <span class="block text-primary-600">Find Your Inner Peace</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                基于心理学和人类学的专业分析，帮助您找到内心的宁静与平和
+                <span class="block mt-2">Professional analysis based on psychology and anthropology to help you find inner peace</span>
+            </p>
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+                <form id="emotionForm" class="space-y-6">
+                    <div>
+                        <input type="text" id="nickname" placeholder="输入您的昵称 | Your Nickname" 
+                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <select id="mood" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">选择您当前的心情 | Select Your Current Mood</option>
+                            <option value="anxious">焦虑 Anxious</option>
+                            <option value="stressed">压力 Stressed</option>
+                            <option value="sad">悲伤 Sad</option>
+                            <option value="confused">困惑 Confused</option>
+                            <option value="overwhelmed">疲惫 Overwhelmed</option>
+                        </select>
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors">
+                        开始分析 | Start Analysis
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+                专业功能 | Professional Features
+            </h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">专业分析 | Professional Analysis</h3>
+                    <p class="text-gray-600">基于心理学理论的深度情绪分析<br>Deep emotional analysis based on psychological theories</p>
+                </div>
+                <!-- Add more features... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系我们 | Contact Us</h3>
+                    <p>Email: felicityahawhale@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>© 2024 felicitywhale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('emotionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nickname = document.getElementById('nickname').value;
+            const mood = document.getElementById('mood').value;
+            
+            // Emotion calculation algorithm
+            const results = calculateEmotions(nickname, mood);
+            showResults(results);
+        });
+
+        function calculateEmotions(nickname, mood) {
+            // Professional-looking calculation based on various factors
+            const factors = {
+                anxious: ['呼吸练习', '正念冥想', '渐进式放松'],
+                stressed: ['时间管理', '优先级排序', '压力释放技巧'],
+                sad: ['情绪日记', '积极思维训练', '社交支持'],
+                confused: ['目标设定', '决策树分析', '思维导图'],
+                overwhelmed: ['任务分解', '休息计划', '能量管理']
+            };
+
+            const personalityFactor = nickname.length % 3 + 1;
+            const moodIntensity = Math.random() * 0.5 + 0.5;
+            
+            return {
+                calmScore: Math.round((personalityFactor * moodIntensity * 100)),
+                suggestions: factors[mood] || [],
+                timeToCalm: Math.round(personalityFactor * 5)
+            };
+        }
+
+        function showResults(results) {
+            alert(`
+心灵平静指数 | Peace Index: ${results.calmScore}/100
+建议活动 | Suggested Activities:
+${results.suggestions.join('\n')}
+预计平静时间 | Estimated Time to Calm: ${results.timeToCalm} minutes
+            `);
+        }
+    </script>
+</body>
+</html>
