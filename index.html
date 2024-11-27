@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心灵平静计算器 | Inner Peace Calculator</title>
+    <title>
+        <div class="en">Inner Peace Calculator</div>
+        <div class="zh" style="display:none;">心灵平静计算器</div>
+    </title>
     <link href="./style.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKNLP4RFSR"></script>
@@ -20,12 +23,24 @@
 <header class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
     <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-            <div class="text-2xl font-bold text-primary-600">心灵平静 | Inner Peace</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#features" class="text-gray-600 hover:text-primary-600">功能 Features</a>
-                <a href="#how-it-works" class="text-gray-600 hover:text-primary-600">工作原理 How it Works</a>
-                <a href="#pricing" class="text-gray-600 hover:text-primary-600">价格 Pricing</a>
-            </div>
+           <div class="text-2xl font-bold text-primary-600">
+                    <div class="en">Inner Peace</div>
+                    <div class="zh" style="display:none;">心灵平静</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary-600">
+                        <div class="en">Features</div>
+                        <div class="zh" style="display:none;">功能</div>
+                    </a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary-600">
+                        <div class="en">How it Works</div>
+                        <div class="zh" style="display:none;">工作原理</div>
+                    </a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary-600">
+                        <div class="en">Pricing</div>
+                        <div class="zh" style="display:none;">价格</div>
+                    </a>
+                </div>
             <select id="languageSwitcher" onchange="switchLanguage()" class="ml-4">
                 <option value="en">English</option>
                 <option value="zh">中文</option>
@@ -58,17 +73,36 @@
                     </div>
                     <div>
                         <select id="mood" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            <option value="">选择您当前的心情 | Select Your Current Mood</option>
-                            <option value="anxious">焦虑 Anxious</option>
-                            <option value="stressed">压力 Stressed</option>
-                            <option value="sad">悲伤 Sad</option>
-                            <option value="confused">困惑 Confused</option>
-                            <option value="overwhelmed">疲惫 Overwhelmed</option>
+                           <option value="">
+                        <div class="en">Select Your Current Mood</div>
+                        <div class="zh" style="display:none;">选择您当前的心情</div>
+                    </option>
+                    <option value="anxious">
+                        <div class="en">Anxious</div>
+                        <div class="zh" style="display:none;">焦虑</div>
+                    </option>
+                    <option value="stressed">
+                        <div class="en">Stressed</div>
+                        <div class="zh" style="display:none;">压力</div>
+                    </option>
+                    <option value="sad">
+                        <div class="en">Sad</div>
+                        <div class="zh" style="display:none;">悲伤</div>
+                    </option>
+                    <option value="confused">
+                        <div class="en">Confused</div>
+                        <div class="zh" style="display:none;">困惑</div>
+                    </option>
+                    <option value="overwhelmed">
+                        <div class="en">Overwhelmed</div>
+                        <div class="zh" style="display:none;">疲惫</div>
+                    </option>
                         </select>
                     </div>
                     <button type="submit" 
                             class="w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors">
-                        开始分析 | Start Analysis
+                         <div class="en">Start Analysis</div>
+                         <div class="zh" style="display:none;">开始分析</div>
                     </button>
                 </form>
             </div>
@@ -79,7 +113,8 @@
     <section id="features" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
-                专业功能 | Professional Features
+                <div class="en">Professional Features</div>
+                <div class="zh" style="display:none;">专业功能</div>
             </h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
@@ -88,8 +123,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">认知行为疗法 | CBT Analysis</h3>
-                    <p class="text-gray-600">基于认知行为疗法的情绪分析<br>Based on Cognitive Behavioral Therapy research<br><a href="https://doi.org/10.1016/j.cpr.2012.06.003" class="text-primary-600 hover:underline">Research Paper</a></p>
+                    <h3 class="text-xl font-semibold mb-4">
+                         <div class="en">CBT Analysis</div>
+                         <div class="zh" style="display:none;">认知行为疗法</div>
+                    <p class="text-gray-600">
+                         <div class="en">Based on Cognitive Behavioral Therapy research</div>
+                        <div class="zh" style="display:none;">基于认知行为疗法的情绪分析</div><br><a href="https://doi.org/10.1016/j.cpr.2012.06.003" class="text-primary-600 hover:underline">Research Paper</a></p>
                 </div>
                 <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
                     <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -97,7 +136,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">正念冥想 | Mindfulness</h3>
+                    <h3 class="text-xl font-semibold mb-4">
+                         <div class="en">Mindfulness</div>
+                         <div class="zh" style="display:none;">正念冥想</div>
+                    </h3>
                     <p class="text-gray-600">整合正念减压疗法<br>Mindfulness-Based Stress Reduction<br><a href="https://doi.org/10.1007/s12671-018-1050-9" class="text-primary-600 hover:underline">Research Paper</a></p>
                 </div>
                 <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow">
@@ -106,7 +148,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">情绪调节 | Emotion Regulation</h3>
+                    <h3 class="text-xl font-semibold mb-4">
+                        <div class="en">Emotion Regulation</div>
+                         <div class="zh" style="display:none;">情绪调节</div> </h3>
                     <p class="text-gray-600">基于情绪调节策略研究<br>Based on Emotion Regulation Strategies<br><a href="https://doi.org/10.1037/a0021180" class="text-primary-600 hover:underline">Research Paper</a></p>
                 </div>
             </div>
