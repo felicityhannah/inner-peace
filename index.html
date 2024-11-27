@@ -214,6 +214,21 @@
     </footer>
 
     <script>
+       
+    function switchLanguage() {
+        var lang = document.getElementById('languageSwitcher').value;
+        var enElements = document.querySelectorAll('.en');
+        var zhElements = document.querySelectorAll('.zh');
+
+        if (lang === 'en') {
+            enElements.forEach(el => el.style.display = 'block');
+            zhElements.forEach(el => el.style.display = 'none');
+        } else {
+            enElements.forEach(el => el.style.display = 'none');
+            zhElements.forEach(el => el.style.display = 'block');
+        }
+    }
+        
         document.getElementById('emotionForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nickname = document.getElementById('nickname').value;
