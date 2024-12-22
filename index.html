@@ -13,9 +13,36 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-WKNLP4RFSR');
 </script>
+
+     <style>
+        #scentedCandleTimer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .candle-img {
+            width: 100px;
+            height: 100px;
+        }
+        .timer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #timerDisplay {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+    </style>
+    
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -362,6 +389,43 @@ For more professional guidance, please contact: felicityahawhale@gmail.com
             `);
         }
     </script>
+    <!--timer-->
+<script>
+    let keystrokeCount = 0;
+
+    // Function to start the timer
+    function startTimer() {
+        let timer = 60; // 60 seconds
+        const display = document.getElementById('timerDisplay');
+        const interval = setInterval(() => {
+            const minutes = Math.floor(timer / 60);
+            const seconds = timer % 60;
+            display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            if (timer === 0) {
+                clearInterval(interval);
+                alert('Time is up! Take a deep breath.');
+            } else {
+                timer--;
+            }
+        }, 1000);
+    }
+
+    
+    // Function to show the scented candle timer
+    function showScentedCandleTimer() {
+        document.getElementById('scentedCandleTimer').style.display = 'block';
+    }
+
+    // Function to handle keystrokes
+    document.addEventListener('keydown', () => {
+        keystrokeCount++;
+        if (keystrokeCount >= 100) { // Adjust the keystroke threshold as needed
+            showScentedCandleTimer();
+            keystrokeCount = 0; // Reset the count after showing the timer
+        }
+    });
+</script>
+    
 </body>
 </html>
 
