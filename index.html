@@ -106,6 +106,171 @@
         </div>
     </section>
 
+    import React, { useState, useEffect } from 'react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Moon, Sun, Heart, Activity, Leaf, Pause, Play } from 'lucide-react';
+
+// 为了在index中使用，只需要导入这个组件并放在适当的位置
+const InnerPeaceTool = () => {
+  const [activeMode, setActiveMode] = useState('day');
+  const [breathCount, setBreathCount] = useState(0);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [seconds, setSeconds] = useState(0);
+  const [timerType, setTimerType] = useState('meditation'); // 'meditation' or 'breathing'
+
+  // 计时器功能
+  useEffect(() => {
+    let interval = null;
+    if (isTimerRunning) {
+      interval = setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isTimerRunning]);
+
+  // 格式化时间显示
+  const formatTime = (totalSeconds) => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  // 重置计时器
+  const resetTimer = () => {
+    setSeconds(0);
+    setIsTimerRunning(false);
+  };
+
+  return (
+    <div className="w-full max-w-3xl mx-auto p-4">
+      <Card className="w-full bg-gradient-to-br from-green-50 to-emerald-50">
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl font-semibold">Inner Peace Guide</CardTitle>
+            <Button 
+              variant="ghost" 
+              onClick={() => setActiveMode(activeMode === 'day' ? 'night' : 'day')}
+            >
+              {activeMode === 'day' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </Button>
+          </div>
+          <CardDescription>Your daily companion for mindfulness and inner peace</CardDescription>
+        </CardHeader>
+
+        <CardContent>
+          <Tabs defaultValue="breathe" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 mb-4">
+              <TabsTrigger value="breathe" className="flex items-center gap-2">
+                <Leaf className="h-4 w-4" />
+                Breathe
+              </TabsTrigger>
+              <TabsTrigger value="mood" className="flex items-center gap-2">
+                <Heart className="h-4 w-4" />
+                Mood
+              </TabsTrigger>
+              <TabsTrigger value="progress" className="flex items-center gap-2">
+                <Activity className="h-4 w-4" />
+                Progress
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="breathe">
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="text-center">
+                    <div 
+                      className="w-32 h-32 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4 cursor-pointer transition-transform hover:scale-105"
+                      onClick={() => {
+                        if (isTimerRunning) {
+                          setBreathCount(prev => prev + 1);
+                        }
+                      }}
+                    >
+                      <span className="text-4xl text-green-600">{breathCount}</span>
+                    </div>
+                    <p className="text-sm text-gray-600">Tap to count breaths</p>
+                  </div>
+                  
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="text-2xl font-bold">
+                      {formatTime(seconds)}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        onClick={() => setIsTimerRunning(!isTimerRunning)}
+                        variant="outline"
+                      >
+                        {isTimerRunning ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                        {isTimerRunning ? ' Pause' : ' Start'}
+                      </Button>
+                      <Button
+                        onClick={resetTimer}
+                        variant="outline"
+                      >
+                        Reset
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="mood">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="grid grid-cols-3 gap-4">
+                    {['😊', '😐', '😔'].map((emoji, index) => (
+                      <Button 
+                        key={index}
+                        variant="outline" 
+                        className="h-16 text-2xl"
+                      >
+                        {emoji}
+                      </Button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="progress">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="space-y-4">
+                    {['Mindfulness', 'Meditation', 'Gratitude'].map((activity, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <span>{activity}</span>
+                        <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-green-500 rounded-full"
+                            style={{width: `${(index + 1) * 25}%`}}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+
+        <CardFooter className="justify-between">
+          <p className="text-sm text-gray-500">Daily streak: 7 days</p>
+          <Button variant="outline" className="ml-auto">
+            Share Progress
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+};
+
+export default InnerPeaceTool;
+    
     <!-- Features -->
     <section id="features" class="py-20 bg-white">
         <div class="container mx-auto px-6">
