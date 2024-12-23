@@ -61,6 +61,99 @@
             <div class="en">Professional analysis based on psychology and anthropology to help you find inner peace</div>
             <div class="zh" style="display:none;">为您找到内心的宁静和平和</div>
         </p>
+
+
+                        <div class="max-w-lg mx-auto">
+                    <div class="card bg-white/80 backdrop-blur">
+                        <h2 class="text-2xl font-semibold text-calm-green-800 mb-6" data-lang-en="Begin Your Journey" data-lang-zh="开启您的旅程">
+                            Begin Your Journey
+                        </h2>
+                        <form id="emotion-form" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-calm-green-700 mb-2" for="name">Your Name</label>
+                                <input type="text" id="name" class="form-input" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-calm-green-700 mb-2" for="mood">Current Mood</label>
+                                <select id="mood" class="form-select">
+                                    <option value="anxious">Anxious</option>
+                                    <option value="stressed">Stressed</option>
+                                    <option value="sad">Sad</option>
+                                    <option value="overwhelmed">Overwhelmed</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Begin Emotional Analysis</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center mb-16">Our Approach to Emotional Wellness</h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="text-xl font-semibold mb-4">Scientific Analysis</h3>
+                        <p>Backed by psychological research and emotional intelligence studies</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌲</div>
+                        <h3 class="text-xl font-semibold mb-4">Cedar Aromatherapy</h3>
+                        <p>Natural cedar scents to enhance your mindfulness practice</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="text-xl font-semibold mb-4">Emotional Tracking</h3>
+                        <p>Monitor your emotional journey with detailed insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Science Section -->
+        <section id="science" class="py-20 bg-calm-green-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="section-title text-center mb-16">The Science Behind InnerPeace</h2>
+                    <div class="prose lg:prose-lg mx-auto">
+                        <p class="text-lg text-gray-700 mb-6">
+                            Our approach combines cutting-edge psychological research with traditional aromatherapy practices. 
+                            Through careful analysis of emotional patterns and responses, we create personalized pathways to emotional balance.
+                        </p>
+                        <div class="bg-white rounded-xl p-8 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-4">Research-Backed Methods</h3>
+                            <ul class="space-y-4">
+                                <li>✓ Emotional Intelligence Framework</li>
+                                <li>✓ Cognitive Behavioral Techniques</li>
+                                <li>✓ Mindfulness-Based Stress Reduction</li>
+                                <li>✓ Natural Aromatherapy Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Cedar Aromatherapy Timer</h2>
+                <div class="card max-w-md mx-auto bg-calm-green-50">
+                    <div id="timer-display" class="text-5xl font-bold text-calm-green-600 mb-8">0:00</div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <button onclick="startTimer(2)" class="btn-secondary">2 min</button>
+                        <button onclick="startTimer(3)" class="btn-secondary">3 min</button>
+                        <button onclick="startTimer(5)" class="btn-secondary">5 min</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
         <!-- Continue this pattern for other text elements -->
     </div>
 </section>
