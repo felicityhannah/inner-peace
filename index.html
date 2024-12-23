@@ -108,6 +108,42 @@
         </div>
     </section>
 
+    <section id="candle-timer" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12">
+            <div class="en">Candle Timer</div>
+            <div class="zh" style="display:none;">蜡烛计时器</div>
+        </h2>
+        <div id="timer" class="text-6xl font-bold text-primary-600 mb-6">05:00</div>
+        <button onclick="startTimer()" class="bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors">
+            <div class="en">Start Timer</div>
+            <div class="zh" style="display:none;">开始计时</div>
+        </button>
+    </div>
+</section>
+
+<script>
+    let timerInterval;
+
+    function startTimer() {
+        let time = 300; // 5 minutes in seconds
+        document.getElementById('timer').textContent = formatTime(time);
+        timerInterval = setInterval(() => {
+            time--;
+            document.getElementById('timer').textContent = formatTime(time);
+            if (time <= 0) {
+                clearInterval(timerInterval);
+                alert('Time is up!');
+            }
+        }, 1000);
+    }
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+</script>
     
     <!-- Features -->
     <section id="features" class="py-20 bg-white">
