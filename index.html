@@ -61,6 +61,30 @@
             <div class="en">Professional analysis based on psychology and anthropology to help you find inner peace</div>
             <div class="zh" style="display:none;">为您找到内心的宁静和平和</div>
         </p>
+
+<script>
+    let timerInterval;
+
+    function startTimer() {
+        let time = 300; // 5 minutes in seconds
+        document.getElementById('timer').textContent = formatTime(time);
+        timerInterval = setInterval(() => {
+            time--;
+            document.getElementById('timer').textContent = formatTime(time);
+            if (time <= 0) {
+                clearInterval(timerInterval);
+                alert('Time is up!');
+            }
+        }, 1000);
+    }
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+</script>
+        
         
         <!-- Continue this pattern for other text elements -->
     </div>
@@ -371,29 +395,6 @@ For more professional guidance, please contact: felicityahawhale@gmail.com
         </button>
     </div>
 </section>
-
-<script>
-    let timerInterval;
-
-    function startTimer() {
-        let time = 300; // 5 minutes in seconds
-        document.getElementById('timer').textContent = formatTime(time);
-        timerInterval = setInterval(() => {
-            time--;
-            document.getElementById('timer').textContent = formatTime(time);
-            if (time <= 0) {
-                clearInterval(timerInterval);
-                alert('Time is up!');
-            }
-        }, 1000);
-    }
-
-    function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    }
-</script>
 
     
 </body>
