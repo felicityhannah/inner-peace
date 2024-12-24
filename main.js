@@ -20,5 +20,15 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
+// Add these classes to the main container
+<div className={`
+  ${embedded 
+    ? 'h-full w-full' 
+    : 'fixed bottom-6 right-6 w-96 h-[600px] sm:w-[400px]'
+  }
+  transform transition-all duration-300
+  ${isMinimized ? 'h-14 w-14' : ''}
+`}>
+
 
 setupCounter(document.querySelector('#counter'))
