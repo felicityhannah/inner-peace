@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mood Tracker</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Select Day of the Week</h2>
+            <select id="dayOfWeek">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+        </section>
+        <section>
+            <h2>Select Today's Weather</h2>
+            <input type="text" id="weather" placeholder="Enter today's weather">
+        </section>
+        <section>
+            <h2>Select Your Mood</h2>
+            <textarea id="mood" placeholder="Enter your mood"></textarea>
+        </section>
+        <section>
+            <h2>Select Emotions</h2>
+            <label for="negativeEmotions">Negative Emotions:</label>
+            <select multiple id="negativeEmotions">
+                <!-- Add negative emotions options here -->
+            </select>
+            <label for="positiveEmotions">Positive Emotions:</label>
+            <select multiple id="positiveEmotions">
+                <!-- Add positive emotions options here -->
+            </select>
+        </section>
+        <section id="cbtSuggestions">
+            <h2>CBT Method Suggestions</h2>
+            <!-- CBT suggestions will be displayed here -->
+        </section>
+        <section id="chatbot">
+            <!-- Chatbot integration -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
